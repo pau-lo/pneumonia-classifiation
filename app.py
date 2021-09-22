@@ -1,6 +1,3 @@
-# code inspire by https://github.com/smarthardik10/Xray-classifier
-
-
 import streamlit as st
 import numpy as np
 from PIL import Image
