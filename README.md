@@ -5,5 +5,5 @@
 A streamlit app to classify pneumonia using computer vision and transfer learning.
 
 
-![caption](https://github.com/pau-lo/pneumonia-classification-app/blob/main/web-video/pneumonia-classification-streamlit-app.gif / GIF)
+![caption](https://github.com/pau-lo/pneumonia-classification-app/blob/main/web-video/pneumonia-classification-streamlit-app.gif)
 
