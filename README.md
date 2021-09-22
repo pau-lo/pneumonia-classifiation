@@ -7,4 +7,6 @@ Below you can find an example of how the app looks like.
 
 ![caption](https://github.com/pau-lo/pneumonia-classification-app/blob/main/web-video/pneumonia-classification-streamlit-app.gif)
 
+<br>
+
 ### Thank you!
