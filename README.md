@@ -1,4 +1,4 @@
-# pneumonia-classifiation
+# pneumonia-classification using Computer Vision and Transfer Learning
 
  [![Open in Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/pau-lo/pneumonia-classification-app/main/app.py)
 
