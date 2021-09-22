@@ -10,3 +10,5 @@ Below you can find an example of how the app looks like.
 <br>
 
 ### Thank you!
+
+<br>
