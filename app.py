@@ -35,6 +35,13 @@ image_file = st.file_uploader(
 buffer = image_file
 temp_file = NamedTemporaryFile(delete=False)
 
+# after loading data
+
+st.write(
+    "The photo is done uploading and reshaping.  Now, please hit the Predict button in order to see " +
+    "whether the images belongs to a pneumonia person or not."
+
+
 # make prediction with an upload image
 
 
