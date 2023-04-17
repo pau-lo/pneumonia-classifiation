@@ -66,23 +66,23 @@ def make_prediction():
 
     if buffer is None:
         if generate_pred:
-            st.write("Please upload an X-ray image. Try again.")
+            st.write("Please upload an X-ray image. or Try again.")
 
     else:
         if buffer is not None:
             if generate_pred:
                 THRESHOLD = 0.5
                 output = model.predict(preprocess_img)[0][0]
-                st.write('prediction output:', output)
+                st.write('Prediction Output:', output)
 
                 prediction = 1 if (output > THRESHOLD) else 0
 
                 if prediction > THRESHOLD:
                     st.write(
-                        "Prediction: The X-ray image belongs to  a PNEUMONIA person.\n")
+                        "Prediction: The X-ray image belongs to a PNEUMONIA person.\n")
                 else:
                     st.write(
-                        "Prediction: The X-ray image  belongs to a NORMAL person.\n")
+                        "Prediction: The X-ray image belongs to a NORMAL person.\n")
 
 
 if __name__ == '__main__':
