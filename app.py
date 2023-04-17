@@ -46,7 +46,7 @@ def make_prediction():
     if buffer is None:
         st.write("After the photo is done uploading and reshaping.  Please hit the Predict " +
                  "button to see whether the image belongs to a pneumonia person or not " + 
-                 "... Or Please upload an X-ray image. Try again.")
+                 "... Or Please upload an X-ray image.")
 
     else:
         new_img = image.load_img(
