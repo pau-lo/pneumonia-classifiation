@@ -65,7 +65,7 @@ def make_prediction():
 
     if buffer is None:
         if generate_pred:
-            st.write("Please upload an X-ray image. or Try again.")
+            st.write("Did you forget to upload an X-ray image.")
 
     else:
         if buffer is not None:
@@ -73,11 +73,14 @@ def make_prediction():
                 THRESHOLD = 0.5
                 output = model.predict(preprocess_img)[0][0]
                 st.write('Prediction Output:', output)
+                
                 prediction = 1 if (output > THRESHOLD) else 0
+                
                 CLASSES = ['NORMAL', 'PNEUMONIA']
                 ClassPred = CLASSES[prediction]
                 ClassProb = output
-                print("Predicition", ClassPred)
+                
+                print("Prediction", ClassPred)
                 print("Prob: {:.2%}".format(ClassProb))
 
                 if prediction > THRESHOLD:
@@ -87,6 +90,6 @@ def make_prediction():
                     st.write(
                         "Prediction: The X-ray image belongs to a NORMAL person.\n")
                     
-              
+           
 if __name__ == '__main__':
     make_prediction()
