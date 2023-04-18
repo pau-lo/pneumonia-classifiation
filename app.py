@@ -73,8 +73,12 @@ def make_prediction():
                 THRESHOLD = 0.5
                 output = model.predict(preprocess_img)[0][0]
                 st.write('Prediction Output:', output)
-                
                 prediction = 1 if (output > THRESHOLD) else 0
+                CLASSES = ['NORMAL', 'PNEUMONIA']
+                ClassPred = CLASSES[prediction]
+                ClassProb = output
+                print("Predicition", ClassPred)
+                print("Prob: {:.2%}".format(ClassProb))
 
                 if prediction > THRESHOLD:
                     st.write(
@@ -83,19 +87,6 @@ def make_prediction():
                     st.write(
                         "Prediction: The X-ray image belongs to a NORMAL person.\n")
                     
-                CLASSES = ['NORMAL', 'PNEUMONIA']
-
-                ClassPred = CLASSES[prediction]
-                ClassProb = output
-
-                print("Predicition", ClassPred)
-                print("Prob: {:.2%}".format(ClassProb))
-
-
-        
-
-    
-    
-    
+              
 if __name__ == '__main__':
     make_prediction()
