@@ -82,22 +82,18 @@ def make_prediction():
                 else:
                     st.write(
                         "Prediction: The X-ray image belongs to a NORMAL person.\n")
+                    
+                CLASSES = ['NORMAL', 'PNEUMONIA']
 
-#                 CLASSES = ['NORMAL', 'PNEUMONIA']
+                ClassPred = CLASSES[prediction]
+                ClassProb = output
 
-#                 ClassPred = CLASSES[prediction]
-#                 ClassProb = output
+                print("Predicition", ClassPred)
+                print("Prob: {:.2%}".format(ClassProb))
 
-#                 print("Predicition", ClassPred)
-#                 print("Prob: {:.2%}".format(ClassProb))
+
         
-CLASSES = ['NORMAL', 'PNEUMONIA']
 
-ClassPred = CLASSES[prediction]
-ClassProb = output
-
-print("Predicition", ClassPred)
-print("Prob: {:.2%}".format(ClassProb))
     
     
     
