@@ -91,6 +91,15 @@ def make_prediction():
 #                 print("Predicition", ClassPred)
 #                 print("Prob: {:.2%}".format(ClassProb))
         
+CLASSES = ['NORMAL', 'PNEUMONIA']
 
+ClassPred = CLASSES[prediction]
+ClassProb = output
+
+print("Predicition", ClassPred)
+print("Prob: {:.2%}".format(ClassProb))
+    
+    
+    
 if __name__ == '__main__':
     make_prediction()
