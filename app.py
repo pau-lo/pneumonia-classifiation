@@ -79,7 +79,7 @@ def make_prediction():
                 ClassPred = CLASSES[prediction]
                 ClassProb = output
 
-                st.write("Predicition", ClassPred)
+                st.write("Predicition:", ClassPred)
                 st.write("Prob: {:.2%}".format(ClassProb))
                 
                 if prediction > THRESHOLD:
