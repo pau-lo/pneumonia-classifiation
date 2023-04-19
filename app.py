@@ -84,7 +84,7 @@ def make_prediction():
                 
                 if prediction > THRESHOLD:
                     st.write(
-                        "Prediction: The X-ray image belongs to a PNEUMONIA person.\n")
+                        "Prediction: There is a", ClassProb, "The X-ray image belongs to a PNEUMONIA person.\n")
                 else:
                     st.write(
                         "Prediction: The X-ray image belongs to a NORMAL person.\n")
