@@ -72,7 +72,7 @@ def make_prediction():
             if generate_pred:
                 THRESHOLD = 0.5
                 output = model.predict(preprocess_img)[0][0]
-                st.write('Prediction Output: {:.2%}'.format(output))
+                st.write('Prediction Output: {:.3%}'.format(output))
                 prediction = 1 if (output > THRESHOLD) else 0
                 
                 if prediction > THRESHOLD:
