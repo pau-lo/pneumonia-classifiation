@@ -7,7 +7,7 @@ from tensorflow.keras.preprocessing import image
 from tempfile import NamedTemporaryFile
 
 
-st.set_option('deprecation.showfileUploaderEncoding', False)
+st.set_option("deprecation.showfileUploaderEncoding", False)
 
 
 @st.cache(allow_output_mutation=True)
@@ -21,16 +21,16 @@ model = loading_model()
 
 st.title("Pneumonia Classification using Computer Vision and Transfer Learning.")
 
-st.subheader("This application leverages VGG-16 pre-trained model to predict " +
-             "whether an X-ray image is positive or negative for Pneumonia.")
+st.subheader(
+    "This application leverages VGG-16 pre-trained model to predict "
+    + "whether an X-ray image is positive or negative for Pneumonia."
+)
 
-background = Image.open('background-image/background-image.jpg')
+background = Image.open("background-image/background-image.jpg")
 st.image(background, use_column_width=True)
-st.write(
-    "Image uploaded from [unplash](https://unsplash.com/photos/2-Hv-Rg4asA)")
+st.write("Image uploaded from [unplash](https://unsplash.com/photos/2-Hv-Rg4asA)")
 
-image_file = st.file_uploader(
-    "Upload an image file: ", type=["jpg", "jpeg", "png"])
+image_file = st.file_uploader("Upload an image file: ", type=["jpg", "jpeg", "png"])
 
 buffer = image_file
 temp_file = NamedTemporaryFile(delete=False)
@@ -44,21 +44,24 @@ def make_prediction():
         st.write(image.load_img(temp_file.name))
 
     if buffer is None:
-        st.write("After the X-ray image is done uploading and reshaping.  Please hit the Predict " +
-                 "button to check whether the image belongs to a pneumonia person or not.")
+        st.write(
+            "After the X-ray image is done uploading and reshaping.  Please hit the Predict "
+            + "button to check whether the image belongs to a pneumonia person or not."
+        )
 
     else:
         new_img = image.load_img(
-            temp_file.name, target_size=(224, 224), color_mode='rgb')
+            temp_file.name, target_size=(224, 224), color_mode="rgb"
+        )
 
         # Preprocessing the image
         preprocess_img = image.img_to_array(new_img)
-        preprocess_img = preprocess_img/255
+        preprocess_img = preprocess_img / 255
         preprocess_img = np.expand_dims(preprocess_img, axis=0)
         # display image
         st.image(preprocess_img, channels="RGB")
-        st.write('Image type: ', type(new_img))
-        st.write('Image size: ', new_img.size)
+        st.write("Image type: ", type(new_img))
+        st.write("Image size: ", new_img.size)
 
     # create predicition button
     generate_pred = st.button("Generate Prediction")
@@ -72,16 +75,17 @@ def make_prediction():
             if generate_pred:
                 THRESHOLD = 0.5
                 output = model.predict(preprocess_img)[0][0]
-                st.write('Prediction Output:', output)
-                prediction = 1 if (output > THRESHOLD) else 0           
+                st.write("Prediction Output:", output)
+                prediction = 1 if (output > THRESHOLD) else 0
                 if prediction > THRESHOLD:
                     st.write(
-                        "Image Prediction: The X-ray image belongs to a PNEUMONIA person.\n")
+                        "Image Prediction: The X-ray image belongs to a PNEUMONIA person.\n"
+                    )
                 else:
                     st.write(
-                        "Image Prediction: The X-ray image belongs to a NORMAL person.\n")
-               
-                    
-       
-if __name__ == '__main__':
+                        "Image Prediction: The X-ray image belongs to a NORMAL person.\n"
+                    )
+
+
+if __name__ == "__main__":
     make_prediction()
