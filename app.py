@@ -76,10 +76,10 @@ def make_prediction():
                 prediction = 1 if (output > THRESHOLD) else 0           
                 if prediction > THRESHOLD:
                     st.write(
-                        "Image Prediction: The X-ray image belongs to a person.\n")
+                        "Image Prediction: The X-ray image belongs to a PNEUMONIA person.\n")
                 else:
                     st.write(
-                        "Image Prediction: The X-ray image belongs to a person.\n")
+                        "Image Prediction: The X-ray image belongs to a NORMAL person.\n")
                
                     
        
