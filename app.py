@@ -75,13 +75,6 @@ def make_prediction():
                 st.write('Prediction Output:', output)
                 
                 prediction = 1 if (output > THRESHOLD) else 0
-                
-                CLASSES = ['NORMAL', 'PNEUMONIA']
-                ClassPred = CLASSES[prediction]
-                ClassProb = output
-                
-                print("Prediction", ClassPred)
-                print("Prob: {:.2%}".format(ClassProb))
 
                 if prediction > THRESHOLD:
                     st.write(
@@ -89,6 +82,13 @@ def make_prediction():
                 else:
                     st.write(
                         "Prediction: The X-ray image belongs to a NORMAL person.\n")
+                    
+                CLASSES = ['NORMAL', 'PNEUMONIA']
+                ClassPred = CLASSES[prediction]
+                ClassProb = output
+                
+                print("Prediction", ClassPred)
+                print("Prob: {:.2%}".format(ClassProb))
                     
            
 if __name__ == '__main__':
