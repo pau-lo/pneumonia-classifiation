@@ -22,7 +22,7 @@ model = loading_model()
 st.title("Pneumonia Classification using Computer Vision and Transfer Learning.")
 
 st.subheader(
-    "This application leverages VGG-16 pre-trained model to predict "
+    "This application leverages transfer learning by using VGG-16 pre-trained model to predict "
     + "whether an X-ray image is positive or negative for Pneumonia."
 )
 
